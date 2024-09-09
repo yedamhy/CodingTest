@@ -1,4 +1,4 @@
-// 백준2606 실버3
+// 백준 2606 실버3
 // https://www.acmicpc.net/problem/2606
 import java.util.*;
 import java.io.*;

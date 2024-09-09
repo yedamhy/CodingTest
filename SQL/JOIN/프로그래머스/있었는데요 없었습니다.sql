@@ -1,4 +1,5 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/59043
+-- https://school.programmers.co.kr/learn/courses/30/lessons/59043
+-- LEVEL3
 SELECT ANIMAL_ID, NAME
 FROM ANIMAL_INS JOIN ANIMAL_OUTS ON (ANIMAL_INS.ANIMAL_ID = ANIMAL_OUTS.ANIMAL_ID)
 WHERE ANIMAL_INS.DATETIME > ANIMAL_OUTS.DATETIME

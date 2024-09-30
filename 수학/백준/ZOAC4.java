@@ -12,7 +12,8 @@ public class Main{
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        int people =(int) Math.ceil((H+1) / (N+1)) * (int)Math.ceil((W+1) / (M+1));
-        System.out.println(people);
+        int rows = (int) Math.ceil((double) H/ (N+1));
+        int cols = (int) Math.ceil((double) W / (M+1));
+        System.out.println(rows * cols);
     }
 }

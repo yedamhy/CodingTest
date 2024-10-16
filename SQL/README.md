@@ -7,3 +7,5 @@ WHERE ADDRESS LIKE '강원도%';
 ```
 
 - `LIKE` 사용!
+
+## WHERE절에서 IN 사용하기

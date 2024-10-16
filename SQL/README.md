@@ -9,3 +9,18 @@ WHERE ADDRESS LIKE '강원도%';
 - `LIKE` 사용!
 
 ## WHERE절에서 IN 사용하기
+```SQL
+-- https://school.programmers.co.kr/learn/courses/30/lessons/131536
+SELECT DISTINCT USER_ID, PRODUCT_ID
+FROM ONLINE_SALE
+WHERE (USER_ID, PRODUCT_ID) IN (
+    SELECT USER_ID, PRODUCT_ID
+    FROM ONLINE_SALE
+    GROUP BY USER_ID, PRODUCT_ID
+    HAVING COUNT(*) > 1
+)
+ORDER BY USER_ID, PRODUCT_ID DESC;
+```
+
+### 중복 방지
+`DISTINCT`

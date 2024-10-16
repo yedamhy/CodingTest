@@ -33,7 +33,7 @@ SELECT STR_TO_DATE('20080101', '%Y-%M-%D')
 --  20080101이라는 문자를 2008-01-01의 형태의 날짜로 리턴
 ```
 
-## WHERE절에서 IN 사용하기
+# WHERE절에서 IN 사용하기
 ```SQL
 -- https://school.programmers.co.kr/learn/courses/30/lessons/131536
 SELECT DISTINCT USER_ID, PRODUCT_ID
@@ -47,5 +47,19 @@ WHERE (USER_ID, PRODUCT_ID) IN (
 ORDER BY USER_ID, PRODUCT_ID DESC;
 ```
 
-### 중복 방지
+# 조건에 따라 값 주기
+- `CASE` 이용
+  예시 : 평가 점수에 따라 등급 선정하고 col 이름 GRADE
+  ```sql
+    SELECT E.EMP_NO, EMP_NAME, 
+        CASE
+        WHEN AVG(SCORE) >= 96 THEN 'S'
+        WHEN AVG(SCORE) >= 90 THEN 'A'
+        WHEN AVG(SCORE) >= 80 THEN 'B'
+        ELSE  'C'
+        END AS GRADE
+
+  ```
+
+# 중복 방지
 `DISTINCT`

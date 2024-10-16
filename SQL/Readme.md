@@ -35,7 +35,6 @@ SELECT STR_TO_DATE('20080101', '%Y-%M-%D')
 
 # WHERE절에서 IN 사용하기
 ```SQL
--- https://school.programmers.co.kr/learn/courses/30/lessons/131536
 SELECT DISTINCT USER_ID, PRODUCT_ID
 FROM ONLINE_SALE
 WHERE (USER_ID, PRODUCT_ID) IN (
@@ -64,3 +63,33 @@ ORDER BY USER_ID, PRODUCT_ID DESC;
 
 # 중복 방지
 `DISTINCT`
+
+# 순위 관련
+### ROW_NUMBER()
+각 행에 고유한 번호(순번)을 부여하는 함수 => 순위 계산, 중복 제거, 페이지네이션 등에 사용
+- 사용 방법
+  ```sql
+    SELECT 
+        ROW_NUMBER() OVER (PARTITION BY 컬럼1 ORDER BY 컬럼2) AS 순번,
+        컬럼1, 컬럼2
+    FROM 테이블;
+
+  ```
+
+- 예시
+  테이블: Employees
+    |EMP_NO	| DEPARTMENT |	NAME |	SALARY |
+  |:---:|:---:|:---:|:---:|
+   | 1	|HR|	Alice	|5000|
+    |2|	HR	|Bob	|4500|
+    |3	|IT	|Carol	|6000|
+    |4	|IT	|Dave	|5500|
+    |5	|IT	|Eve	|5000|
+
+  - 부서별로 연봉 순위
+    ```sql
+    SELECT DEPARTMENT, NAME, SALARY,
+            ROW_NUMBER() OVER (PARTITION BY DEPARTMENT ORDER BY SALARY DESC) AS RANK
+    FROM EMPLOYEES;
+    ```
+  

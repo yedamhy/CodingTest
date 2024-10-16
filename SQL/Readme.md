@@ -1,13 +1,17 @@
 # 문자열
-## 특정 단어로 시작하는 것 찾기
-```sql
-SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
-FROM FOOD_FACTORY
-WHERE ADDRESS LIKE '강원도%';
-```
-
+### 특정 단어로 시작하는 것 찾기
 - `LIKE` 사용!
+    ```sql
+    SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
+    FROM FOOD_FACTORY
+    WHERE ADDRESS LIKE '강원도%';
+    ```
 
+### 숫자에 문자열 붙여서 반환하기
+- `CONCAT` 사용!
+    ```sql
+    SELECT CONCAT(SUM(D_BETWEEN_DIST), 'km') AS TOTAL_DISTANCE
+    ```
 ## 날짜 관련
 ### 1) 날짜→ 문자열
 

@@ -49,6 +49,7 @@ ORDER BY USER_ID, PRODUCT_ID DESC;
 
 # 조건에 따라 값 주기
 - `CASE` 이용
+  
   예시 : 평가 점수에 따라 등급 선정하고 col 이름 GRADE
   ```sql
     SELECT E.EMP_NO, EMP_NAME, 
